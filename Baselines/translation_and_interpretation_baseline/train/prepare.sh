@@ -21,8 +21,8 @@ cat $DATA_DIR/train.en | $MYDIR/prepare_data/tokenizer.perl -l en | tr A-Z a-z >
 cat $DATA_DIR/valid.en-zh.en | $MYDIR/prepare_data/tokenizer.perl -l en | tr A-Z a-z > $DATA_DIR/valid.tok.en
 
 #Bulid Dictionary
-python $MYDIR/prepare_data/build_dictionary.py $DATA_DIR/train.en
-python $MYDIR/prepare_data/build_dictionary.py $DATA_DIR/train.zh
+python $MYDIR/prepare_data/build_dictionary.py $DATA_DIR/train.tok.en
+python $MYDIR/prepare_data/build_dictionary.py $DATA_DIR/train.tok.zh
 src_vocab_size=50000
 trg_vocab_size=50000
 python $MYDIR/prepare_data/generate_vocab_from_json.py $DATA_DIR/train.en.json ${src_vocab_size} > $DATA_DIR/vocab.en
