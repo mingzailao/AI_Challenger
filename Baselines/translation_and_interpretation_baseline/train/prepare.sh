@@ -25,6 +25,6 @@ python $MYDIR/prepare_data/build_dictionary.py $DATA_DIR/train.tok.en
 python $MYDIR/prepare_data/build_dictionary.py $DATA_DIR/train.tok.zh
 src_vocab_size=50000
 trg_vocab_size=50000
-python $MYDIR/prepare_data/generate_vocab_from_json.py $DATA_DIR/train.en.json ${src_vocab_size} > $DATA_DIR/vocab.en
-python $MYDIR/prepare_data/generate_vocab_from_json.py $DATA_DIR/train.zh.json ${trg_vocab_size} > $DATA_DIR/vocab.zh
+python $MYDIR/prepare_data/generate_vocab_from_json.py $DATA_DIR/train.tok.en.json ${src_vocab_size} > $DATA_DIR/vocab.en
+python $MYDIR/prepare_data/generate_vocab_from_json.py $DATA_DIR/train.tok.zh.json ${trg_vocab_size} > $DATA_DIR/vocab.zh
 rm -r $DATA_DIR/train.*.json
